@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noticias de Fútbol</title>
+    <!-- Carga de Tailwind CSS para un diseño moderno y responsive -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#000080', // Azul oscuro (tu color original)
+                        'secondary': '#55dfbb', // Celeste claro (tu color original)
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'Arial', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Estilos personalizados para el contenedor del video y la imagen */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+        }
+        .video-container iframe, .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body class="bg-secondary min-h-screen p-4 md:p-8">
+
+    <div class="max-w-4xl mx-auto bg-white shadow-2xl rounded-xl p-6 md:p-10">
+        
+        <!-- Encabezado -->
+        <header class="text-center mb-10">
+            <h1 class="text-5xl font-extrabold text-primary mb-2">
+                Últimas Noticias del Fútbol
+            </h1>
+            <p class="text-xl text-gray-600">
+                Mantente al día con lo más reciente del mundo del fútbol.
+            </p>
+        </header>
+
+        <!-- Sección de Imagen de la Noticia -->
+        <div class="mb-8 rounded-lg overflow-hidden shadow-lg">
+            <!-- Imagen de placeholder pública para evitar el error 'argentina.jpg' -->
+            <img 
+                src="https://placehold.co/800x450/000080/ffffff?text=ARGENTINA+CAMPE%C3%93N" 
+                alt="Celebración del equipo de fútbol de Argentina" 
+                class="w-full h-auto object-cover transition duration-300 hover:scale-[1.02] transform"
+                onerror="this.onerror=null;this.src='https://placehold.co/800x450/4A90E2/ffffff?text=IMAGEN+NO+DISPONIBLE';"
+            >
+        </div>
+
+        <!-- Título de la Noticia -->
+        <div class="text-center mb-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-primary leading-tight">
+                Argentina: Reviviendo la Experiencia de Ganar una Copa del Mundo
+            </h2>
+        </div>
+        
+        <!-- Contenido de la Noticia (Video) -->
+        <section class="mb-10">
+            <p class="text-lg text-gray-700 mb-6 text-center italic">
+                Mira un resumen emotivo de la trayectoria del equipo hacia el campeonato mundial.
+            </p>
+            
+            <!-- Contenedor del video con estilo responsive 16:9 -->
+            <div class="video-container rounded-lg overflow-hidden shadow-xl border-4 border-primary">
+                <!-- Se usa un video de YouTube integrado ya que no tenemos los archivos .mp4/.ogg en el servidor de GitHub -->
+                <iframe 
+                    width="640" 
+                    height="360" 
+                    src="https://www.youtube.com/embed/ZxgWyYDjBUs" 
+                    title="Video Emocional de Fútbol" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+                
+                <!-- Si quieres usar el tag <video>, deberías usar un video con URL pública -->
+                <!-- <video controls>
+                    <source src="URL_PUBLICA_DE_VIDEO.mp4" type="video/mp4">
+                    Tu navegador no soporta la reproducción de videos.
+                </video> -->
+                
+            </div>
+        </section>
+
+        <!-- Pie de página simple -->
+        <footer class="text-center pt-6 border-t border-gray-200">
+            <p class="text-sm text-gray-500">
+                © 2025 Noticias de Fútbol. Todos los derechos reservados.
+            </p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
